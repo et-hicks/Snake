@@ -4,6 +4,7 @@ import time
 
 
 class GameObject:
+
     def __init__(self, file, spawnX, spawnY):
         self.file = pygame.image.load(file)
         self.spawnX = spawnX
@@ -28,6 +29,7 @@ class GameObject:
         return self.spawnX
     def returnY(self):
         return self.spawnY
+
 
 
 
@@ -65,7 +67,7 @@ jump = 10+64
 
 running = True
 left, right, up, down = False, False, False, False
-difficulty = .7
+difficulty = .7 # seconds
 
 while running:
     for event in pygame.event.get():
@@ -116,3 +118,10 @@ while running:
     time.sleep(difficulty)
 
 pygame.quit()
+
+"""
+Abstract away the render from the logic
+
+Make a matrix that holds the location of the snake
+
+"""
